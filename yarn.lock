@@ -2457,7 +2457,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jest/core@^27.3.1, @jest/core@workspace:packages/jest-core":
+"@jest/core@workspace:*, @jest/core@workspace:packages/jest-core":
   version: 0.0.0-use.local
   resolution: "@jest/core@workspace:packages/jest-core"
   dependencies:

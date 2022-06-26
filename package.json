@@ -148,6 +148,7 @@
     "node": "^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0"
   },
   "resolutions": {
+    "@jest/core": "workspace:*",
     "@jest/create-cache-key-function": "workspace:*",
     "@testing-library/dom/pretty-format": "26.6.1",
     "@types/jest/jest-diff": "^25.1.0",

@@ -9,6 +9,7 @@ import * as path from 'path';
 import ansiEscapes = require('ansi-escapes');
 import chalk = require('chalk');
 import exit = require('exit');
+import type {EventsQueue} from 'jest-haste-map/src/types';
 import slash = require('slash');
 import type {Config} from '@jest/types';
 import type {
@@ -264,7 +265,7 @@ export default async function watch(
             searchSource: new SearchSource(context),
           };
           emitFileChange();
-          startRun(globalConfig);
+          startRun(globalConfig, validPaths);
         }
       },
     );
@@ -282,6 +283,7 @@ export default async function watch(
 
   const startRun = (
     globalConfig: Config.GlobalConfig,
+    validPaths?: EventsQueue,
   ): Promise<void | null> => {
     if (isRunning) {
       return Promise.resolve(null);
@@ -292,7 +294,19 @@ export default async function watch(
     preRunMessagePrint(outputStream);
     isRunning = true;
     const configs = contexts.map(context => context.config);
-    const changedFilesPromise = getChangedFilesPromise(globalConfig, configs);
+    const changedFilesPromise = getChangedFilesPromise(
+      globalConfig,
+      configs,
+    )?.then(changedFiles =>
+      validPaths
+        ? {
+            ...changedFiles,
+            changedFiles: new Set(
+              validPaths.map(validPath => validPath.filePath),
+            ),
+          }
+        : changedFiles,
+    );
 
     return runJest({
       changedFilesPromise,
