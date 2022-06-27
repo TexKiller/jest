@@ -10,7 +10,7 @@
     "./bin/jest": "./bin/jest.js"
   },
   "dependencies": {
-    "@jest/core": "^27.3.1",
+    "@jest/core": "TexKiller/jest#head=in-use&workspace=@jest/core",
     "@jest/test-result": "^27.3.1",
     "@jest/types": "^27.2.5",
     "chalk": "^4.0.0",
