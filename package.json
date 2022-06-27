@@ -11,8 +11,6 @@
     "@babel/preset-typescript": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@crowdin/cli": "^3.5.2",
-    "@jest/globals": "workspace:*",
-    "@jest/test-utils": "workspace:*",
     "@types/babel__core": "^7.0.0",
     "@types/babel__generator": "^7.0.0",
     "@types/babel__template": "^7.0.0",
@@ -49,13 +47,8 @@
     "istanbul-lib-coverage": "^3.0.0",
     "istanbul-lib-report": "^3.0.0",
     "istanbul-reports": "^3.0.0",
-    "jest": "workspace:*",
-    "jest-changed-files": "workspace:*",
     "jest-junit": "^13.0.0",
-    "jest-mock": "workspace:*",
-    "jest-runner-tsd": "^1.1.0",
     "jest-silent-reporter": "^0.5.0",
-    "jest-snapshot": "workspace:*",
     "jest-snapshot-serializer-raw": "^1.1.0",
     "jest-watch-typeahead": "^0.6.0",
     "jquery": "^3.2.1",
@@ -148,14 +141,10 @@
     "node": "^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0"
   },
   "resolutions": {
-    "@jest/core": "workspace:*",
-    "@jest/create-cache-key-function": "workspace:*",
     "@testing-library/dom/pretty-format": "26.6.1",
     "@types/jest/jest-diff": "^25.1.0",
     "@types/jest/pretty-format": "^25.1.0",
-    "babel-jest": "workspace:*",
-    "jest": "workspace:*",
-    "jest-environment-node": "workspace:*",
-    "react-native": "patch:react-native@0.64.0#./patches/react-native.patch"
+    "react-native": "patch:react-native@0.64.0#./patches/react-native.patch",
+    "@jest/test-result": "file:./packages/jest-test-result"
   }
 }
