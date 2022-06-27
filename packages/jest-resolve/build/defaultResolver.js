@@ -15,7 +15,7 @@ function _path() {
   return data;
 }
 
-function _jestPnpResolver() {
+/*function _jestPnpResolver() {
   const data = _interopRequireDefault(require('jest-pnp-resolver'));
 
   _jestPnpResolver = function () {
@@ -23,7 +23,7 @@ function _jestPnpResolver() {
   };
 
   return data;
-}
+}*/
 
 function _resolve() {
   const data = require('resolve');
@@ -52,9 +52,9 @@ function _interopRequireDefault(obj) {
 function defaultResolver(path, options) {
   // Yarn 2 adds support to `resolve` automatically so the pnpResolver is only
   // needed for Yarn 1 which implements version 1 of the pnp spec
-  if (process.versions.pnp === '1') {
+  /*if (process.versions.pnp === '1') {
     return (0, _jestPnpResolver().default)(path, options);
-  }
+  }*/
 
   const result = (0, _resolve().sync)(path, {
     ...options,

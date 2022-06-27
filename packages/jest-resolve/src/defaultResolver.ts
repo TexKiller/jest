@@ -6,7 +6,7 @@
  */
 
 import {resolve} from 'path';
-import pnpResolver from 'jest-pnp-resolver';
+//import pnpResolver from 'jest-pnp-resolver';
 import {sync as resolveSync} from 'resolve';
 import {
   Options as ResolveExportsOptions,
@@ -51,9 +51,9 @@ export default function defaultResolver(
 ): Config.Path {
   // Yarn 2 adds support to `resolve` automatically so the pnpResolver is only
   // needed for Yarn 1 which implements version 1 of the pnp spec
-  if (process.versions.pnp === '1') {
+  /*if (process.versions.pnp === '1') {
     return pnpResolver(path, options);
-  }
+  }*/
 
   const result = resolveSync(path, {
     ...options,
